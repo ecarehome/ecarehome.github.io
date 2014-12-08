@@ -5,13 +5,13 @@
     <title></title>
     <style>
         div {
-            top: 100px;
+            top: 134px;
             margin: 0;
             padding: 0;
             width: 100%;;
             text-align: center;
             font-size: 48px;;
-            color: #ffae01;
+            color: #283944;
         }
 
         a {
@@ -21,12 +21,31 @@
 
         ul {
             list-style: none;
+            width: 640px;
+            margin: 0 auto;
+            font-size: 0px;
+        }
+
+        ul > li {
+            display: inline-block;
+            padding: 10px 25px;
         }
 
         pre {
-            color: red;
-            font-size: 32px;
+            color: #424545;
+            font-size: 22px;
             text-align: left;
+            width: 640px;
+            margin: 0 auto;
+            line-height: 28px;
+
+        }
+
+        p.notice {
+            color: #e04615;
+            font-size: 28px;
+            text-align: left;
+            padding-left: 32px;
             width: 640px;
             margin: 0 auto;
         }
@@ -34,19 +53,20 @@
 </head>
 <body>
 <div>
-    <h1>颐佳客户端</h1>
+    <h1>颐佳APP下载</h1>
 
     <ul>
         <li>
-            <a href="android/easy-health.apk" target="_blank">颐佳健亲宝客户端(安卓版)</a>
+            <a href="android/easy-health.apk" target="_blank"><img src="images/android.png"/></a>
 
         </li>
-        <li>
+        <li class="ios">
             <a href="itms-services://?action=download-manifest&url=https://app.cmri.cn/repo/ejia/ejia.plist"
-               target="_blank">颐佳照护客户端(ios版)</a>
+               target="_blank"><img src="images/ios.png"/></a>
         </li>
     </ul>
-        <pre>友情提示:
+    <p class="notice">友情提示:</p>
+        <pre>
         对于android版的app:
         如果在微信环境下
             请新开浏览器打开当前页面
