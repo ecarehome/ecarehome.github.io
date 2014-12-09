@@ -2,13 +2,24 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0">
+    <script>
+        var metas = document.getElementsByTagName('meta');
+        var ua = navigator.userAgent;
+        for (var i = 0; i < metas.length; i++) {
+            var m = metas[i];
+            if (m.name == "viewport") {
+                m.setAttribute('content', "width=device-width, initial-scale=2");
+            }
+        }
+    </script>
     <title></title>
+    <link rel="stylesheet" href="fa/css/font-awesome.css"/>
     <style>
         div {
             top: 134px;
             margin: 0;
             padding: 0;
-            width: 100%;;
             text-align: center;
             font-size: 48px;;
             color: #283944;
@@ -16,19 +27,51 @@
 
         a {
             text-decoration: none;
-            color: blue;
         }
 
         ul {
             list-style: none;
-            width: 640px;
             margin: 0 auto;
             font-size: 0px;
         }
 
         ul > li {
             display: inline-block;
-            padding: 10px 25px;
+            margin: 10px 0px;
+            width: 284px;
+            height: 116px;
+            font-size: 45px;
+            text-align: left;
+            line-height: 116px;
+        }
+        ul > li > a > i.fa {
+            margin-left: 20px;
+            font-size: 52px;
+            text-shadow: 2px 2px 2px #000;
+        }
+
+        ul > li > a > i.fa-android {
+            color: #337523;
+        }
+        ul > li > a > i.fa-apple {
+            color: #255c8c;
+
+        }
+        ul > li:nth-child(1n) {
+
+            background: url('images/android.png') no-repeat;
+        }
+
+        ul > li:nth-child(1n) > a {
+            color: #337523;
+        }
+        ul > li:nth-child(2n) {
+            margin-left: 50px;
+            color: #255c8c;
+            background: url('images/ios.png') no-repeat;
+        }
+        ul > li:nth-child(2n) > a {
+            color: #255c8c;
         }
 
         pre {
@@ -38,7 +81,7 @@
             width: 640px;
             margin: 0 auto;
             line-height: 38px;
-
+            word-break: break-all;
         }
 
         p.notice {
@@ -47,7 +90,20 @@
             text-align: left;
             padding-left: 32px;
             width: 640px;
-            margin: 0 auto;
+            margin: 50px auto 10px auto;
+        }
+
+        ul > li > a {
+            display: inline-block;
+            text-align: center;
+
+        }
+        ul > li > a > span {
+            display: inline-block;
+            width: 200px;
+            margin-left: 10px;
+            text-align: center;
+            text-shadow: 1px -1px 1px #ccc;
         }
     </style>
 </head>
@@ -57,12 +113,12 @@
 
     <ul>
         <li>
-            <a href="android/easy-health.apk" target="_blank"><img src="images/android.png"/></a>
+            <a href="android/easy-health.apk" target="_blank"><i class="fa fa-android"></i><span>健亲宝</span></a>
 
         </li>
         <li class="ios">
             <a href="itms-services://?action=download-manifest&url=https://app.cmri.cn/repo/ejia/ejia.plist"
-               target="_blank"><img src="images/ios.png"/></a>
+               target="_blank"><i class="fa fa-apple"></i><span>e照护</span></a>
         </li>
     </ul>
     <p class="notice">友情提示:</p>
