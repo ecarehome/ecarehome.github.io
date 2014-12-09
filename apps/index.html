@@ -2,7 +2,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>颐佳APP下载</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0">
     <link rel="stylesheet" href="fa/css/font-awesome.css"/>
     <style>
         div {
@@ -10,8 +11,10 @@
             margin: 0;
             padding: 0;
             text-align: center;
-            font-size: 48px;;
+            font-size: 28px;;
             color: #283944;
+            width: 640px;
+            margin: 0 auto;
         }
 
         a {
@@ -27,12 +30,12 @@
         ul > li {
             display: inline-block;
             margin: 10px 0px;
-            width: 284px;
             height: 116px;
             font-size: 45px;
             text-align: left;
             line-height: 116px;
         }
+
         ul > li > a > i.fa {
             margin-left: 20px;
             font-size: 52px;
@@ -42,10 +45,12 @@
         ul > li > a > i.fa-android {
             color: #337523;
         }
+
         ul > li > a > i.fa-apple {
             color: #255c8c;
 
         }
+
         ul > li:nth-child(1n) {
 
             background: url('images/android.png') no-repeat;
@@ -54,11 +59,13 @@
         ul > li:nth-child(1n) > a {
             color: #337523;
         }
+
         ul > li:nth-child(2n) {
             margin-left: 50px;
             color: #255c8c;
             background: url('images/ios.png') no-repeat;
         }
+
         ul > li:nth-child(2n) > a {
             color: #255c8c;
         }
@@ -87,6 +94,7 @@
             text-align: center;
 
         }
+
         ul > li > a > span {
             display: inline-block;
             width: 200px;
@@ -121,5 +129,42 @@
             如果安装失败，请新开浏览器下载
     </pre>
 </div>
+<script>
+
+    //document.onload = function() {
+    console.log("inside");
+    var metas = document.getElementsByTagName('meta');
+    var viewports = [];
+    var ua = navigator.userAgent;
+    for (var i = 0; i < metas.length; i++) {
+        var m = metas[i];
+        if (m.name == "viewport") {
+            viewports.push(m);
+        }
+    }
+    var width = window.screen.width;
+    var height = window.screen.height;
+    console.log("width = " + width);
+    console.log('height = ' + height);
+    var ratio = width / 640;
+    ratio = ratio.toFixed(1);
+    console.log(ratio);
+    var viewport = null;
+    var parentNode = null;
+    for(var i = 0; i < viewports.length; i++) {
+        viewport = viewports[i];
+        parentNode = viewport.parentNode;
+        parentNode.removeChild(viewport);
+    }
+
+    viewport = document.createElement('meta');
+    viewport.setAttribute('name', 'viewport');
+    viewport.setAttribute('content', 'width=device-width, initial-scale=' + ratio);
+    parentNode.appendChild(viewport);
+
+    //};
+
+
+</script>
 </body>
 </html>
