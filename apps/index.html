@@ -3,17 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>颐佳APP下载</title>
-    <meta name="viewport" content="width=device-width, initial-scale=0">
+    <meta name="viewport" content="width=device-width,user-scalable=0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="fa/css/font-awesome.css"/>
     <style>
+
+        body {
+            font-family: '黑体';
+        }
+
         div {
             top: 134px;
             margin: 0;
             padding: 0;
             text-align: center;
-            font-size: 28px;;
+            font-size: 12px;;
             color: #283944;
-            width: 640px;
             margin: 0 auto;
         }
 
@@ -21,86 +30,116 @@
             text-decoration: none;
         }
 
-        ul {
+        ul.app {
             list-style: none;
             margin: 0 auto;
             font-size: 0px;
+            padding: 0;
         }
 
-        ul > li {
-            display: inline-block;
+        ul.app > li {
             margin: 10px 0px;
-            height: 116px;
-            font-size: 45px;
-            text-align: left;
-            line-height: 116px;
+            font-size: 32px;
+            text-align: center;
+            position: relative;
         }
 
-        ul > li > a > i.fa {
+        ul.app > li > a {
+            box-shadow: 2px 2px 2px #ccc;
+            border-radius: 6px;
+            width: 300px;
+            height: 80px;
+        }
+
+        ul.app > li > a > i.fa {
+            display: inline-block;
             margin-left: 20px;
             font-size: 52px;
-            text-shadow: 2px 2px 2px #000;
+            text-shadow: 2px 2px 2px #ccc;
+            position: absolute;
+            top: 15px;
+            left: 0;
         }
 
-        ul > li > a > i.fa-android {
+        ul.app > li > a > i.fa-android {
             color: #337523;
         }
 
-        ul > li > a > i.fa-apple {
+        ul.app > li > a > i.fa-apple {
             color: #255c8c;
 
         }
 
-        ul > li:nth-child(1n) {
+        ul.app > li:nth-child(1n) > a {
+            background-color: #42d553;
+            color: #346922;
 
-            background: url('images/android.png') no-repeat;
         }
 
-        ul > li:nth-child(1n) > a {
-            color: #337523;
+        ul.app > li:nth-child(2n) > a {
+            background-color: #509ada;
+            box-shadow: 2px 2px 2px #ccc;
+            border-radius: 6px;
+            color: #16537a;
         }
 
-        ul > li:nth-child(2n) {
-            margin-left: 50px;
-            color: #255c8c;
-            background: url('images/ios.png') no-repeat;
-        }
-
-        ul > li:nth-child(2n) > a {
-            color: #255c8c;
-        }
-
-        p {
+        p.text {
             color: #424545;
-            font-size: 32px;
+            font-size: 16px;
             text-align: left;
-            width: 640px;
-            margin-left: 20px;
-            line-height: 38px;
             word-break: break-all;
+            padding-left: 20px;
         }
 
         p.notice {
             color: #e04615;
-            font-size: 38px;
-            text-align: left;
-            padding-left: 32px;
-            width: 640px;
+            font-size: 18px;
+            text-align: center;
             margin: 50px auto 10px auto;
-        }
-
-        ul > li > a {
-            display: inline-block;
-            text-align: center;
 
         }
 
-        ul > li > a > span {
+        ul.app > li > a {
             display: inline-block;
-            width: 200px;
-            margin-left: 10px;
             text-align: center;
+            position: relative;
+        }
+
+        ul.app > li > a > sub {
+            position: absolute;
+            height: 20px;
+            display: block;
+            right: 0;
+            bottom: 10px;
+            font-size: 14px;
+            line-height: 20px;
+            text-align: center;
+            width: 250px;
+            text-shadow: 1px 1px 0px #aaa;
+        }
+
+        ul.app > li > a > span {
+            display: inline-block;
             text-shadow: 1px -1px 1px #ccc;
+            line-height: 60px;
+            position: absolute;
+            right: 0;
+            width: 250px;
+        }
+
+        ul.text {
+            list-style: decimal;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        ul.text  ul li {
+            text-align: left;
+        }
+
+        ul.text > li > ul ul{
+            list-style: none;
+            padding: 0;
         }
     </style>
 </head>
@@ -108,31 +147,48 @@
 <div>
     <h1>颐佳APP下载</h1>
 
-    <ul>
+    <ul class="app">
         <li>
-            <a href="android/easy-health.apk" target="_blank"><i class="fa fa-android"></i><span>健亲宝</span></a>
+            <a href="android/easy-health.apk" target="_blank"><i class="fa fa-android"></i><span>颐佳健亲宝</span><sub>适用Android手机用户下载</sub></a>
 
         </li>
         <li class="ios">
             <a href="itms-services://?action=download-manifest&url=https://app.cmri.cn/repo/ejia/ejia.plist"
-               target="_blank"><i class="fa fa-apple"></i><span>e照护</span></a>
+               target="_blank"><i class="fa fa-apple"></i><span>颐佳照护</span><sub>适用iPhone手机用户下载</sub></a>
         </li>
     </ul>
-    <p class="notice">友情提示:</p>
-        <p>
-        对于android版的app:<br/>
-        如果在微信环境下<br/>
-            &nbsp;&nbsp;请新开浏览器打开当前页面<br/>
-            &nbsp;&nbsp;然后点击蓝色文字下载安装<br/>
-        对于ios版的app:<br/>
-            &nbsp;&nbsp;请长按蓝色文字下载、安装<br/>
-            &nbsp;&nbsp;如果安装失败，请新开浏览器下载<br/>
-    </p>
+    <p class="notice">友情提示</p>
+
+    <ul class="text">
+        <li>
+            对于android版的app
+            <ul>
+                <li>如果在微信环境下
+                    <ul>
+                        <li>请新开浏览器打开当前页面</li>
+                        <li>然后点击蓝色文字下载安装</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            对于iso版的app
+            <ul>
+                <li>如果在微信环境下
+                    <ul>
+                        <li>请新开浏览器打开当前页面</li>
+                        <li>然后点击蓝色文字下载安装</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
 </div>
 <script>
 
     //document.onload = function() {
     console.log("inside");
+    var designWidth = 640;
     var metas = document.getElementsByTagName('meta');
     var viewports = [];
     var ua = navigator.userAgent;
@@ -151,17 +207,27 @@
     console.log(ratio);
     var viewport = null;
     var parentNode = null;
-    for(var i = 0; i < viewports.length; i++) {
+    for (var i = 0; i < viewports.length; i++) {
         viewport = viewports[i];
         parentNode = viewport.parentNode;
         parentNode.removeChild(viewport);
     }
 
-    viewport = document.createElement('meta');
-    viewport.setAttribute('name', 'viewport');
-    viewport.setAttribute('content', 'width=device-width, initial-scale=' + ratio);
-    parentNode.appendChild(viewport);
+    /*
 
+     viewport = document.createElement('meta');
+     viewport.setAttribute('name', 'viewport');
+     viewport.setAttribute('content', 'width=' + designWidth + ',initial-scale=0');
+
+     if (!parentNode) {
+     parentNode = document.getElementsByTagName('head')[0];
+     }
+     try {
+     parentNode.appendChild(viewport);
+     } catch (e) {
+     console.log(e);
+     }
+     */
     //};
 
 
